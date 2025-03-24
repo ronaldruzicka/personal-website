@@ -3,12 +3,21 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
+    "dev": "pnpm prepare && astro dev",
+    "build": "pnpm prepare && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "prepare": "panda codegen",
+    "panda": "panda",
+    "format": "biome format --write .",
+    "lint": "biome lint .",
+    "check": "biome check --apply ."
   },
   "dependencies": {
     "astro": "^5.5.4"
+  },
+  "devDependencies": {
+    "@pandacss/dev": "^0.53.2",
+    "postcss": "^8.5.3"
   }
 }

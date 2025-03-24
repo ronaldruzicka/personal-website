@@ -1,0 +1,15 @@
+---
+import { css } from '../../styled-system/css';
+
+export type Props = {
+  variant?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+};
+
+const { variant: Element = 'h1', ...props } = Astro.props;
+---
+
+<Element
+  {...props}
+  class={css({ fontSize: 'heading', fontFamily: 'heading', lineHeight: 'heading' })}
+  ><slot /></Element
+>

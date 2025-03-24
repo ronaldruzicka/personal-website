@@ -1,0 +1,40 @@
+---
+import { css } from '../../styled-system/css';
+import { hstack } from '../../styled-system/patterns';
+import { vstack } from '../../styled-system/patterns';
+import { center } from '../../styled-system/patterns';
+
+import TextPrimary from './text-primary.astro';
+import Title from './title.astro';
+---
+
+<section
+  class={center({
+    height: '100%',
+    gridColumn: '2 / 12',
+    md: { gridColumn: '3 / 11' },
+    lg: { gridColumn: '3 / 10' },
+    xl: { gridColumn: '3 / 9' },
+  })}
+>
+  <div class={hstack({ gap: '2' })}>
+    <div class={vstack({ gap: '4', alignItems: 'start' })}>
+      <p>
+        <TextPrimary>&lt;span&gt;</TextPrimary>Hey👋, I'm Ronald<TextPrimary
+          >&lt;/span&gt;</TextPrimary
+        >
+      </p>
+      <Title>
+        Senior <TextPrimary>&lt;Frontend&gt;</TextPrimary> developer
+      </Title>
+      <p class={css({ textWrap: 'balance' })}>
+        <TextPrimary>&lt;p&gt;</TextPrimary>With 9 years of experience in <TextPrimary
+          >React</TextPrimary
+        > and <TextPrimary>TypeScript</TextPrimary>, now exploring <TextPrimary>Svelte</TextPrimary>
+        and <TextPrimary>Deno</TextPrimary> to push web development further.<TextPrimary
+          >&lt;p&gt;</TextPrimary
+        >
+      </p>
+    </div>
+  </div>
+</section>

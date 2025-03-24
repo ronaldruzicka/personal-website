@@ -1,22 +1,49 @@
+---
+import '../styles/index.css';
+import { css } from '../../styled-system/css';
+
+import backgroundSvg from '../assets/background.svg';
+---
+
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400&family=Sora:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="generator" content={Astro.generator} />
+    <title>Ronald Ruzicka personal website</title>
+  </head>
+  <body
+    class={css({
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+    })}
+  >
+    <main
+      class={css({
+        width: '100%',
+        height: '100%',
+        backdropFilter: 'blur(100px)',
+        display: 'grid',
+        gridTemplateColumns: 'repeat(12, 1fr)',
+        gap: '3',
+      })}
+    >
+      <slot />
+    </main>
+  </body>
 </html>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+<style define:vars={{ bgImage: `url(${backgroundSvg.src})` }}>
+  body {
+    background-image: var(--bgImage);
+  }
 </style>

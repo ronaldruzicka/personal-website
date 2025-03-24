@@ -23,5 +23,6 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 
-# panda css
-styled-system/
+## Panda
+styled-system
+styled-system-studio

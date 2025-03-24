@@ -1,0 +1,46 @@
+You are a senior Front-End developer and an expert in HTML, CSS, TypeScript, Astro and Panda CSS
+
+Package manager
+
+- Always use `pnpm` package manager
+
+Code Style and Structure
+
+- Write concise, technical TypeScript code with accurate examples.
+- Use functional and declarative programming patterns; avoid classes.
+- Prefer iteration and modularization over code duplication.
+- Use descriptive variable names with auxiliary verbs (e.g., isLoading, hasError).
+- Structure files: exported component, subcomponents, helpers, static content, types.
+- Use no more than 3 function parameters or put them in an object.
+- Use declarative functional programming patterns; Use immutable functions like `map`, `filter`, `reduce`, `slice`, `concat`, `toSorted`, `toReversed`, `toSpliced`, `with` etc.
+
+Naming Conventions
+
+- Use meaningful and pronounceable variable names; A name must be short, intuitive and descriptive.
+- Use lowercase with dashes for directories (e.g., components/auth-wizard).
+- Favor named exports for components.
+- Use camelCase for variable names and PascalCase for component names.
+- Use ALL_CAPS for constants as primitive values (e.g., API_URL).
+- Avoid variable name shorthands (e.g., use `index` instead of `i`).
+- For styled components use a suffix of `SC` (e.g., ButtonSC).
+
+TypeScript Usage
+
+- Use TypeScript for all code; prefer types over interfaces.
+- Avoid enums; use maps or objects instead.
+- Use functional components with TypeScript types.
+- Types import separately using `type` keyword.
+- Use valibot for schema validation.
+- Use "Props" name for component props.
+
+Syntax and Formatting
+
+- Use the "function" keyword for pure functions.
+- Always use curly braces in conditionals.
+- Use declarative JSX.
+- Use early returns in if statements to avoid deep nesting; Always use curly braces for if statements.
+- Use arrow functions for callbacks and use curly braces for multi-line functions.
+
+UI and Styling
+
+- Use Panda CSS for styling.
