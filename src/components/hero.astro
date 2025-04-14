@@ -1,23 +1,57 @@
 ---
+import { Image } from 'astro:assets';
 import { css } from '../../styled-system/css';
-import { hstack } from '../../styled-system/patterns';
-import { vstack } from '../../styled-system/patterns';
-import { center } from '../../styled-system/patterns';
+import { hstack, vstack } from '../../styled-system/patterns';
 
 import TextPrimary from './text-primary.astro';
 import Title from './title.astro';
+
+import Mouse from './mouse.astro';
+import Photo from '../assets/photo-cartoon.webp';
 ---
 
-<section
-  class={center({
+<header
+  class={css({
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    gap: '5',
+    width: '100%',
     height: '100%',
-    gridColumn: '2 / 12',
-    md: { gridColumn: '3 / 11' },
-    lg: { gridColumn: '3 / 10' },
-    xl: { gridColumn: '3 / 9' },
+    padding: '5',
+    backdropFilter: 'blur(100px)',
+    md: {
+      display: 'grid',
+      gridTemplateColumns: 'repeat(12, 1fr)',
+      gap: '3',
+      padding: 0,
+    },
   })}
 >
-  <div class={hstack({ gap: '2' })}>
+  <div
+    class={css({
+      gridColumn: '1 / -1',
+      md: { order: '1', gridColumn: '9 / 12' },
+      xl: { gridColumn: '8 / 10' },
+    })}
+  >
+    <Image
+      src={Photo}
+      alt="Ronald Ruzicka cartoon avatar"
+      class={css({
+        borderRadius: 'full',
+        overflow: 'hidden',
+      })}
+    />
+  </div>
+  <div
+    class={hstack({
+      gap: '2',
+      gridColumn: '1 / -1',
+      md: { gridColumn: '2 / 9' },
+      xl: { gridColumn: '3 / 8' },
+    })}
+  >
     <div class={vstack({ gap: '4', alignItems: 'start' })}>
       <p>
         <TextPrimary>&lt;span&gt;</TextPrimary>Hey👋, I'm Ronald<TextPrimary
@@ -37,4 +71,5 @@ import Title from './title.astro';
       </p>
     </div>
   </div>
-</section>
+  <Mouse />
+</header>

@@ -9,12 +9,12 @@ const globalCss = defineGlobalStyles({
     width: '100%',
     height: '100%',
     backgroundColor: 'background',
-    color: 'text',
+    color: 'foreground',
     fontFamily: 'body',
   },
   '::selection': {
     backgroundColor: 'primary',
-    color: 'text',
+    color: 'foreground',
   },
 });
 
@@ -37,10 +37,17 @@ export default defineConfig({
         lg: '960px',
         xl: '1200px',
       },
+      keyframes: {
+        scrollDown: {
+          '0%': { transform: 'translateY(0px)', opacity: '1' },
+          '40%': { transform: 'translateY(4px) scaleY(1.6)', opacity: '1', borderRadius: '2px' },
+          '100%': { transform: 'translateY(18px)', opacity: '0' }
+        },
+      },
       tokens: {
         colors: {
           background: { value: '#171c23' },
-          text: { value: '#f0fcf9' },
+          foreground: { value: '#f0fcf9' },
           primary: { value: '#00bd95' },
           secondary: { value: '#e63462' },
           accent: { value: '#48bb78' },
